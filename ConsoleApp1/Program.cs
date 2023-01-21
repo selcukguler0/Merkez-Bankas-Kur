@@ -12,13 +12,15 @@ namespace ConsoleApp1
     {
         static async Task Main(string[] args)
         {
-            var today = DateTime.Today;
+            var today = DateTime.Now;
             var isWeekend = today.DayOfWeek == DayOfWeek.Saturday || today.DayOfWeek == DayOfWeek.Sunday;
 
-
+            var newDate = today.DayOfWeek == DayOfWeek.Saturday ? today.AddDays(-1) : today.AddDays(-2);
+            var requestURL = $"https://www.tcmb.gov.tr/kurlar/{newDate.Year}{newDate.ToString("MM")}/{newDate.ToString("dd")}{newDate.ToString("MM")}{newDate.Year}.xml";
+            
             var client = new HttpClient();
 
-            var response = isWeekend ? await client.GetAsync("https://www.tcmb.gov.tr/kurlar/202212/06122022.xml") : await client.GetAsync("https://www.tcmb.gov.tr/kurlar/today.xml");
+            var response = isWeekend ? await client.GetAsync(requestURL) : await client.GetAsync("https://www.tcmb.gov.tr/kurlar/today.xml");
 
             var content = await response.Content.ReadAsStringAsync();
 
