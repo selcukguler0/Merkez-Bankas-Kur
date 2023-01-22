@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 // Bir bütünleştirilmiş koda ilişkin Genel Bilgiler aşağıdaki öznitelikler kümesiyle
 // denetlenir. Bütünleştirilmiş kod ile ilişkili bilgileri değiştirmek için
@@ -13,7 +14,6 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCopyright("Copyright ©  2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-
 // ComVisible özniteliğinin false olarak ayarlanması bu bütünleştirilmiş koddaki türleri
 // COM bileşenleri için görünmez yapar. Bu bütünleştirilmiş koddaki bir türe
 // erişmeniz gerekirse ComVisible özniteliğini o türde true olarak ayarlayın.
